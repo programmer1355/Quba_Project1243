@@ -1,0 +1,285 @@
+/* إعداد الألوان وتأثيرات الأورورا */
+:root {
+    --bg-main: #f8fafc;
+    --card-white: #ffffff;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    --accent-color: #4f46e5;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* الهيدر الأنيق جداً */
+.aurora-header {
+    background-color: #1e1b4b;
+    color: white;
+    padding: 70px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.aurora-header.mini {
+    padding: 40px 20px;
+}
+
+.aurora-blur {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(124,58,237,0.4) 0%, transparent 70%);
+    top: -50px;
+    right: -50px;
+    z-index: 1;
+}
+
+.header-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.aurora-header h1 {
+    font-size: 2.6em;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.time-text {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #e2e8f0;
+}
+
+/* الحاوية والكروت الممتازة */
+.content-wrapper {
+    max-width: 950px;
+    margin: -30px auto 60px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.premium-card {
+    background: var(--card-white);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 35px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 35px rgba(15, 23, 42, 0.07);
+}
+
+.card-title {
+    font-size: 1.4em;
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+}
+
+/* شبكة المواد */
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+.subject-item {
+    background: #f1f5f9;
+    padding: 18px;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 700;
+    color: #334155;
+    transition: all 0.2s ease;
+}
+
+.subject-item:hover {
+    background: #1e1b4b;
+    color: white;
+}
+
+/* المعرض التفاعلي */
+.aurora-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.interactive-img {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.interactive-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.interactive-img:hover img {
+    transform: scale(1.06);
+}
+
+/* قائمة الطاقم المنسدلة */
+.aurora-details summary {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--text-dark);
+    padding: 5px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.details-body {
+    margin-top: 20px;
+    padding: 10px 20px 0;
+    border-right: 3px solid var(--accent-color);
+}
+
+.team-row {
+    padding: 12px 0;
+    font-size: 1.15em;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.team-row span {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.leader-row {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.team-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* الجدول الفخم */
+.table-container {
+    overflow-x: auto;
+}
+
+.aurora-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.aurora-table th {
+    background-color: #f1f5f9;
+    color: var(--text-dark);
+    padding: 16px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.aurora-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.1em;
+}
+
+.aurora-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.score-badge {
+    background: #e2e8f0;
+    color: var(--text-dark);
+    padding: 4px 14px;
+    border-radius: 30px;
+    font-weight: 700;
+}
+
+.score-badge.gold {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+/* الأزرار العصرية */
+.action-wrapper {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.aurora-btn {
+    display: inline-block;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 14px 40px;
+    font-size: 1.15em;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+    transition: all 0.2s ease;
+}
+
+.aurora-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.aurora-btn.back-btn {
+    background: #1e1b4b;
+    box-shadow: 0 4px 14px rgba(30, 27, 75, 0.2);
+}
+
+.aurora-btn.back-btn:hover {
+    background: #312e81;
+}
+
+/* أنيميشن ناعم */
+.fade-in {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
